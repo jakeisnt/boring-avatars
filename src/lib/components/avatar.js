@@ -7,8 +7,15 @@ import AvatarBeam from './avatar-beam'
 import AvatarSunset from './avatar-sunset'
 import AvatarMarble from './avatar-marble'
 
+import toImg from 'react-svg-to-image'
+
 const variants = ['pixel','bauhaus','ring','beam','sunset','marble']
 const deprecatedVariants = {geometric: 'beam', abstract: 'bauhaus'}
+const downloadImageFn = (name, variant) => () => toImg('svg', `${name}${variant}Img`.replace(/\s/g, ''), {
+          scale: 3,
+          format: 'png',
+          quality: 1,
+          download: true, })
 
 const Avatar = ({
   variant = 'marble',
@@ -17,7 +24,8 @@ const Avatar = ({
   size = 40,
   ...props
 }) => {
-  const avatarProps = {colors, name, size, ...props}
+  const onClick = downloadImageFn(name, variant)
+  const avatarProps = {colors, name, size, onClick, ...props}
   const checkedVariant = () => {
     if(Object.keys(deprecatedVariants).includes(variant)) {
       return deprecatedVariants[variant]

@@ -158,5 +158,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "dependencies": {
+    "react-svg-to-image": "3.0.0"
   }
 }
