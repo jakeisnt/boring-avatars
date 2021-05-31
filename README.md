@@ -62,3 +62,6 @@ https://source.boringavatars.com/marble/120/Maria%20Mitchell?colors=264653,2a9d8
 For more information, [check out the README](https://github.com/hihayk/boring-avatars-service/blob/main/README.md)
 
 
+### PNG conversion
+
+Unfortunately, HTML5 Canvas tools only support a subset of SVG, so any tools that use a canvas-based approach to convert SVG to other image formats via HTML5 won't be able to capture photos like these avatars. The best way to download an image of one of these avatars without significant effort invested in image rendering is to just take a screenshot.
